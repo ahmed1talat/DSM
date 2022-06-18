@@ -15,21 +15,14 @@ namespace DSM.TABLES.Base
         #region prop
         [Key]
         public Guid ID { get; set; }
+        public string Name { get; set; }
         public DateTime CreatedDate { get; set; }
-        public DateTime ModifiedDate { get; set; }
-        [ForeignKey("userModifided")]
-        public Guid ModifiedBy { get; set; }
-        [ForeignKey("userDeleteed")]
-        public Guid DeletedBY { get; set; }
-        public bool IsActive { get; set; }
-        public bool IsDelete { get; set; }
-        [ForeignKey("userCreated")]
-        public Guid AddedBy { get; set; }
-        public User userCreated { get; set; }
-        public User userModifided { get; set; }
-        public User userDeleteed { get; set; }
 
-        public DateTime DeletedDate{ get; set; }
+        public bool IsActive { get; set; }
+       
+        
+
+       
 
         #endregion
 

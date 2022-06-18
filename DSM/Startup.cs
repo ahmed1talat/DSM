@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DSM.BLL.PEPOLE;
 using DSM.DAL;
+using DSM.TABLES.Pepole;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +27,9 @@ namespace DSM
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            services.AddScoped(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+          //  services.AddScoped(< UserBLL > ());
 
             services.AddDbContext<DSMDBContext>(option =>
             {

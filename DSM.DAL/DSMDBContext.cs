@@ -22,11 +22,22 @@ namespace DSM.DAL
         {
 
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //modelBuilder.Entity<User>().HasMany(x => x.Createduser).WithOne(x => x.userCreated).HasForeignKey(x => x.AddedBy);
+            //modelBuilder.Entity<User>().HasMany(x => x.Modifideduser).WithOne(x => x.userModifided).HasForeignKey(x => x.ModifiedBy);
+            //modelBuilder.Entity<User>().HasMany(x => x.Deleteeduser).WithOne(x => x.userDeleteed).HasForeignKey(x => x.DeletedBY);
+
+            //modelBuilder.Entity<User>().HasMany(x =>x.Createduser).WithRequired().HasForeignKey(x => x.AddedBy);
+           
+            //modelBuilder.Entity<User>().HasMany(x => x.BranchModified).WithOne(x => x.ModifiedUser).HasForeignKey(x => x.ModifiedBy);
+            //modelBuilder.Entity<User>().HasMany(x => x.BranchDeleted).WithOne(x => x.DeletedUser).HasForeignKey(x => x.DeletedBy);
+        }
         public DbSet<User> users { get; set; }
         public DbSet<Branch> branches { get; set; }
         public DbSet<ImagesScreen> screens { get; set; }
-        public DbSet<ImagesScreen> images { get; set; }
-        public DbSet<Mdeia> mdeias { get; set; }
+        
+       
 
 
 

@@ -10,10 +10,11 @@ namespace DSM.TABLES.Guide
 {
     public class Branch:BaseEntity
     {
-        public string Name { get; set; }
+       
         public string Poster { get; set; }
-        public ICollection<ImagesScreen> screens { get; set; }
-        public ICollection<UserBranch> userBranches { get; set; }
+        public virtual ICollection<UserBranch> UserBranches { get; set; }
+        public virtual ICollection<ImagesScreen> screens { get; set; }
+
 
 
     }
